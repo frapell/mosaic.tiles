@@ -1,0 +1,6 @@
+[report]
+include =
+    src/mosaic/*
+omit =
+    */test*
+    */upgrades/*

@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="mosaic.tiles">
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="mosaic.tiles.interfaces.IMosaicTilesLayer"
+      />
+
+  <!-- Publish static files -->
+  <plone:static
+      name="mosaic.tiles"
+      type="plone"
+      directory="static"
+      />
+
+  <plone:tile
+      name="mosaic.tiles.html"
+      title="Multiple Rich Text Fields"
+      description=""
+      for="*"
+      schema=".html.IHTMLTile"
+      class=".html.HTMLTile"
+      permission="zope2.View"
+      add_permission="cmf.ModifyPortalContent"
+      />
+
+</configure>
